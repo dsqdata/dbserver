@@ -1,0 +1,4 @@
+[2018-07-18T11:25:04.992] [ERROR] logErr - (process.<anonymous>) <app.js:31> log unhandledRejection error 
+Error: Can't set headers after they are sent.
+[2018-07-18T11:25:04.994] [ERROR] logErr - (process.<anonymous>) <app.js:32> log unhandledRejection promise 
+[object Promise]

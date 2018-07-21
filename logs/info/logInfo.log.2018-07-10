@@ -1,0 +1,5 @@
+[2018-07-10T15:12:07.896] [INFO] logInfo - Cheese is Gouda.
+[2018-07-10T15:28:14.448] [INFO] logInfo - ::ffff:192.168.0.97 GET /api/patient/getmyinfo/5b29b732a07d2c04549afbdc 302 20 ms
+[2018-07-10T15:28:14.507] [INFO] logInfo - ::ffff:192.168.0.97 GET / 200 15 ms
+[2018-07-10T16:31:09.916] [INFO] logInfo - Cheese is Gouda.
+[2018-07-10T16:32:03.854] [INFO] logInfo - Cheese is Gouda.

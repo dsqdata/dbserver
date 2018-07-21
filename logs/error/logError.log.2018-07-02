@@ -1,0 +1,8 @@
+[2018-07-02T13:23:27.946] [ERROR] logErr - (process.<anonymous>) <app.js:31> log unhandledRejection error 
+MongoError: Authentication failed.
+[2018-07-02T13:23:27.947] [ERROR] logErr - (process.<anonymous>) <app.js:32> log unhandledRejection promise 
+[object Promise]
+[2018-07-02T13:23:50.878] [ERROR] logErr - (process.<anonymous>) <app.js:31> log unhandledRejection error 
+MongoNetworkError: failed to connect to server [47.93.217.170:27017] on first connect [MongoNetworkError: connect ECONNREFUSED 47.93.217.170:27017]
+[2018-07-02T13:23:50.879] [ERROR] logErr - (process.<anonymous>) <app.js:32> log unhandledRejection promise 
+[object Promise]

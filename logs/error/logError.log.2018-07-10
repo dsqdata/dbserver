@@ -1,0 +1,2 @@
+[2018-07-10T16:31:10.030] [ERROR] logErr - (process.<anonymous>) <app.js:27> log uncaughtException error
+Error: The edge module has not been pre-compiled for node.js version v8.1.4. You must build a custom version of edge.node. Please refer to https://github.com/tjanczuk/edge for building instructions.
