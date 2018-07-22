@@ -28,6 +28,7 @@ exports.ClassInfo = require('./ClassInfo');
 exports.FloorInfo = require('./FloorInfo');
 exports.CommunityInfo = require('./CommunityInfo');
 exports.CompanyInfo = require('./CompanyInfo');
+exports.CusinfoInfo = require('./CusinfoInfo');
 exports.AdminUser = require('./AdminUser');
 exports.User = require('./User');
 exports.AdminGroup = require('./AdminGroup');
