@@ -25,6 +25,8 @@ db.on('close', function () {
     // mongoose.connect(config.url, {server:{auto_reconnect:true}});
 });
 exports.ClassInfo = require('./ClassInfo');
+exports.RouteInfo = require('./RouteInfo');
+
 exports.FloorInfo = require('./FloorInfo');
 exports.CommunityInfo = require('./CommunityInfo');
 exports.CompanyInfo = require('./CompanyInfo');
@@ -45,3 +47,4 @@ exports.SystemOptionLog = require('./SystemOptionLog');
 exports.Ads = require('./Ads');
 exports.AdsItems = require('./AdsItems');
 exports.UserPosi = require('./UserPosi');
+exports.Emeter = require('./Emeter');

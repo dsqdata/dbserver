@@ -11,5 +11,10 @@ module.exports.routeConfig = {
         {'getClassInfos': {post: classInfo.getClassInfos}},
         {'addClassInfo': {post: classInfo.addClassInfo}},
         {'delClassInfo': {post: classInfo.delClassInfo}},
+    ],
+    '/route/': [
+        {'getRouteInfos': {post: classInfo.getRouteInfos}},
+        {'addRouteInfo': {post: classInfo.addRouteInfo}},
+        {'delRouteInfo': {post: classInfo.delRouteInfo}},
     ]
 };

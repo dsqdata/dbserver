@@ -4,6 +4,7 @@ exports.adminGroup = require('./adminGroup');
 
 //----------------
 
+exports.emeter = require('./emeter');
 exports.companyInfo = require('./companyInfo');
 exports.cusinfoInfo = require('./cusinfoInfo');
 exports.communityInfo = require('./communityInfo');
