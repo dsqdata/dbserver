@@ -10,21 +10,18 @@ var moment = require('moment')
 var SystemOptionLogSchema = new Schema({
     _id: {
         type: String,
-        
+
         'default': shortid.generate
     },
     type: String, //login:登录 exception:异常
-    date: { type: Date, default: Date.now },
+    date: {type: Date, default: Date.now},
     logs: String
 });
 
-SystemOptionLogSchema.statics = {
+SystemOptionLogSchema.statics = {}
 
-
-}
-
-SystemOptionLogSchema.set('toJSON', { getters: true, virtuals: true });
-SystemOptionLogSchema.set('toObject', { getters: true, virtuals: true });
+SystemOptionLogSchema.set('toJSON', {getters: true, virtuals: true});
+SystemOptionLogSchema.set('toObject', {getters: true, virtuals: true});
 
 SystemOptionLogSchema.path('date').get(function (v) {
     return moment(v).format("YYYY-MM-DD HH:mm:ss");
