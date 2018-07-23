@@ -32,15 +32,17 @@ class Emeter {
 
     async addEmeter(req, res, next) {
         const companyObj = {
-            no:req.body.no,
-            cusinfoId:req.body.cusinfoId._id,
-            routeId:req.body.routeId,
-            classId:req.body.classId,
+            no: req.body.no,
+            cusinfoId: req.body.cusinfoId._id,
+            routeId: req.body.routeId,
+            classAllPath: req.body.classAllPath,
+            classId: req.body.classId,
             name: req.body.name,
             address: req.body.address,
             allname: req.body.allname,
             introduction: req.body.introduction,
             tel: req.body.tel,
+            bzstatus: req.body.bzstatus,
             contacts: req.body.contacts,
             type: 'cp'
         }
@@ -89,7 +91,10 @@ class Emeter {
         }
 
         try {
-            let companyInfos = await EmeterModel.find(fi).populate({path: 'cusinfoId', select: {name: 1,_id:1}}).sort({
+            let companyInfos = await EmeterModel.find(fi).populate({
+                path: 'cusinfoId',
+                select: {name: 1, _id: 1}
+            }).sort({
                 date: -1
             }).skip(Number(req.query.ps) * (Number(req.query.pi) - 1)).limit(Number(req.query.ps))
 

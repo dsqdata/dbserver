@@ -11,15 +11,20 @@ var EmeterSchema = new Schema({
         type: String,
         unique: true
     },
-    cusinfoId:{ type:String,ref:'CusinfoInfo'},
-    routeId:String,
-    classId:String,
+    cusinfoId: {type: String, ref: 'CusinfoInfo'},
+    routeId: String,
+    classAllPath: [],
+    classId: String,
     name: String,
     allname: String,
     address: String,
     contacts: String,
     tel: String,
     introduction: String,
+    bzstatus:{
+        type: Number,
+        default: 0
+    },
     status: {
         type: Number,
         default: 1
