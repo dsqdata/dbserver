@@ -1,6 +1,6 @@
 const AdminUserModel = require("../models").AdminUser;
 const AdminResourceModel = require("../models").AdminResource;
-const SystemOptionLogModel = require("../models").SystemOptionLog;
+
 
 class AdminUser {
     constructor() {
@@ -33,10 +33,6 @@ class AdminUser {
                     req.connection.remoteAddress ||
                     req.socket.remoteAddress ||
                     req.connection.socket.remoteAddress;
-                let loginLog = new SystemOptionLogModel();
-                loginLog.type = 'login';
-                loginLog.logs = user.userName + ' 登录，IP:' + clientIp;
-                await loginLog.save();
                 res.send({
                     state: 'success',
                     loginUser: user

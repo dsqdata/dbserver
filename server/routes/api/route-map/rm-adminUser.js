@@ -5,8 +5,7 @@
  * url:{http-method:['filter',controller.method]}//映射时配置过滤器
  ********************************************************************/
 
-const {adminUser, adminGroup, systemOptionLog} = require('../../../lib/controller');
-// const systemInfo = require('../../../lib/controller/adminUser');
+const {adminUser, adminGroup} = require('../../../lib/controller');
 module.exports.routeConfig = {
     // 管理员登录
     // router.post('/admin/doLogin', AdminUser.loginAction);
@@ -16,8 +15,5 @@ module.exports.routeConfig = {
     ],
     '/group/': [
         {'getAdminGroups': {post: ['gridPageFilter', adminGroup.getAdminGroups]}},
-    ],
-    '/log/': [
-        {'getOptionLogs': {post: ['gridPageFilter', systemOptionLog.getSystemOptionLogs]}},
-    ],
+    ]
 };
