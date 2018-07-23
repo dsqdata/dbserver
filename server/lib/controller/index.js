@@ -1,7 +1,5 @@
 exports.adminUser = require('./adminUser');
-exports.systemOptionLog = require('./SystemOptionLog');
 exports.adminGroup = require('./adminGroup');
-
 //----------------
 
 exports.emeter = require('./emeter');
