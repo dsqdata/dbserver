@@ -117,6 +117,37 @@ class Account {
             })
         }
     }
+
+
+    async addBalance(req, res, next) {
+        var id = req.body._id;
+        var balance = req.body.balance;
+
+        try {
+            let account = await AccountModel.findOne({_id: id}).exec();
+            if (account) {// 未开户
+                var allBalance = parseFloat(account.balance) + parseFloat(balance)
+                //更新电表信息
+                await AccountModel.findOneAndUpdate({_id: id}, {$set: {balance: allBalance}});
+                res.send({
+                    state: 'success',
+                    id: account._id
+                });
+            } else {
+                res.send({
+                    state: 'error',
+                    type: 'ERROR_IN_SAVE_DATA',
+                    message: '保存数据失败:',
+                })
+            }
+        } catch (err) {
+            res.send({
+                state: 'error',
+                type: 'ERROR_IN_SAVE_DATA',
+                message: '保存数据失败:',
+            })
+        }
+    }
 }
 
 module.exports = new Account();

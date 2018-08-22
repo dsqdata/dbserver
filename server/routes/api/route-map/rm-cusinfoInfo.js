@@ -16,6 +16,7 @@ module.exports.routeConfig = {
         {'getAccountInfos': {post: account.getAccount}},
         {'addAccountInfo': {post: account.addAccount}},
         {'delAccountInfo': {post: account.delAccount}},
+        {'addBalanceInfo': {post: account.addBalance}},
     ],
     '/emeter/': [
         {'getEmeterInfos': {post: emeter.getEmeters}},
