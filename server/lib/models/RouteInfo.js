@@ -7,6 +7,11 @@ var RouteInfoSchema = new Schema({
         type: String,
         default: shortid.generate
     },
+    no: {
+        type: String,
+        unique: true
+    },
+    floorAllPath: [],
     floorId: String,
     floorName: String,
     companyId: String,

@@ -143,6 +143,8 @@ class ClassInfo {
 
     async addRouteInfo(req, res, next) {
         const companyObj = {
+            floorAllPath: req.body.floorAllPath,
+            no: req.body.no,
             floorId: req.body.floorId,
             floorName: req.body.floorName,
             companyId: req.body.companyId,
