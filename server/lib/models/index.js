@@ -47,3 +47,5 @@ exports.Ads = require('./Ads');
 exports.AdsItems = require('./AdsItems');
 exports.UserPosi = require('./UserPosi');
 exports.Emeter = require('./Emeter');
+exports.Account = require('./Account');
+exports.AccountLog = require('./AccountLog');

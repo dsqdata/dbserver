@@ -8,3 +8,4 @@ exports.cusinfoInfo = require('./cusinfoInfo');
 exports.communityInfo = require('./communityInfo');
 exports.floorInfo = require('./floorInfo');
 exports.classInfo = require('./classInfo');
+exports.account = require('./account');

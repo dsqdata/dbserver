@@ -80,8 +80,8 @@ class Emeter {
         if (req.query.no && req.query.no != 'null') {
             fi.no = new RegExp(req.query.no, 'gi');
         }
-        if (req.query.cusinfoId && req.query.cusinfoId != 'null') {
-            fi.cusinfoId = new RegExp(req.query.cusinfoId, 'gi');
+        if (req.query.classAllPath && req.query.classAllPath != 'null') {
+            fi.classAllPath = req.query.classAllPath
         }
 
         if (req.query.status != null) {
@@ -91,10 +91,7 @@ class Emeter {
         }
 
         try {
-            let companyInfos = await EmeterModel.find(fi).populate({
-                path: 'cusinfoId',
-                select: {name: 1, _id: 1}
-            }).sort({
+            let companyInfos = await EmeterModel.find(fi).sort({
                 date: -1
             }).skip(Number(req.query.ps) * (Number(req.query.pi) - 1)).limit(Number(req.query.ps))
 

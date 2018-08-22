@@ -5,11 +5,21 @@
  * url:{http-method:['filter',controller.method]}//映射时配置过滤器
  ********************************************************************/
 
-const {cusinfoInfo} = require('../../../lib/controller');
+const {cusinfoInfo,account,emeter} = require('../../../lib/controller');
 module.exports.routeConfig = {
     '/cusinfo/': [
         {'getCusinfoInfos': {post: cusinfoInfo.getCusinfoInfos}},
         {'addCusinfoInfo': {post: cusinfoInfo.addCusinfoInfo}},
         {'delCusinfoInfo': {post: cusinfoInfo.delCusinfoInfo}},
+    ],
+    '/account/': [
+        {'getAccountInfos': {post: account.getAccount}},
+        {'addAccountInfo': {post: account.addAccount}},
+        {'delAccountInfo': {post: account.delAccount}},
+    ],
+    '/emeter/': [
+        {'getEmeterInfos': {post: emeter.getEmeters}},
+        {'addEmeterInfo': {post: emeter.addEmeter}},
+        {'delEmeterInfo': {post: emeter.delEmeter}},
     ]
 };
