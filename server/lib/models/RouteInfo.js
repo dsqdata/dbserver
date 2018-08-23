@@ -18,6 +18,11 @@ var RouteInfoSchema = new Schema({
     companyName: String,
     communityId: String,
     communityName: String,
+
+    floorNo: Number,
+    routeType: String,
+    ip: String,
+    port: Number,
     name: String,
     allname: String,
     address: String,

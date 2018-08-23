@@ -36,6 +36,9 @@ class FloorInfo {
             companyName: req.body.companyName,
             communityId: req.body.communityId,
             communityName: req.body.communityName,
+
+
+
             name: req.body.name,
             address: req.body.address,
             allname: req.body.allname,

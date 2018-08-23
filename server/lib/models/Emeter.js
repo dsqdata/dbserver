@@ -14,6 +14,7 @@ var EmeterSchema = new Schema({
     cusinfoId: {type: String, ref: 'CusinfoInfo'},
     routeId: String,
     classAllPath: [],
+    routeAllPath: [],
     classId: String,
     name: String,
     allname: String,
@@ -21,7 +22,7 @@ var EmeterSchema = new Schema({
     contacts: String,
     tel: String,
     introduction: String,
-    bzstatus:{
+    bzstatus: {
         type: Number,
         default: 0
     },

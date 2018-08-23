@@ -78,7 +78,7 @@ class Account {
     }
 
     async getAccount(req, res, next) {
-        var fi = {}
+        var fi = {meterType: 'e'}
         if (req.query.no && req.query.no != 'null') {
             fi.no = new RegExp(req.query.no, 'gi');
         }

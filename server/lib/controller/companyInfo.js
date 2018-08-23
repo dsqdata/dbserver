@@ -2,6 +2,8 @@ const CompanyInfoModel = require("../models").CompanyInfo;
 const CommunityInfoModel = require("../models").CommunityInfo;
 const FloorInfoModel = require("../models").FloorInfo;
 const ClassInfoModel = require("../models").ClassInfo;
+const RouteInfoModel = require("../models").RouteInfo;
+
 
 class CompanyInfo {
     constructor() {
@@ -14,12 +16,14 @@ class CompanyInfo {
             let communityInfos = await CommunityInfoModel.find(fi).sort({date: -1})
             let floorInfos = await FloorInfoModel.find(fi).sort({date: -1})
             let classInfos = await ClassInfoModel.find(fi).sort({date: -1})
+            let routeInfos = await RouteInfoModel.find(fi).sort({date: -1})
             res.send({
                 state: 'success',
                 companyList: companyInfos,
                 communityList: communityInfos,
                 floorList: floorInfos,
-                classList: classInfos
+                classList: classInfos,
+                routeList: routeInfos
             });
         } catch (err) {
             res.send({
