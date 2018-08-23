@@ -72,8 +72,6 @@ class CusinfoInfo {
     }
 
     async getCusinfoInfos(req, res, next) {
-        console.log(req.query)
-
         var name = req.query.name
         var fi = {}
         if (req.query.name && req.query.name != 'null') {
