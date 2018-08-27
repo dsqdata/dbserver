@@ -20,7 +20,12 @@ var EmeterSchema = new Schema({
     allname: String,
     address: String,
     contacts: String,
+    mPort: String,//串口号
+    mIp: String,//表号
+    typeNo: String, //型号
     tel: String,
+    ct: String,
+    ifyff: String,
     introduction: String,
     bzstatus: {
         type: Number,

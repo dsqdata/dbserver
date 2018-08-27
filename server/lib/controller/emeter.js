@@ -33,7 +33,7 @@ class Emeter {
     async addEmeter(req, res, next) {
         const companyObj = {
             no: req.body.no,
-            cusinfoId: req.body.cusinfoId._id,
+            //cusinfoId: req.body.cusinfoId._id,
             routeId: req.body.routeId,
             classAllPath: req.body.classAllPath,
             classId: req.body.classId,
@@ -44,6 +44,11 @@ class Emeter {
             tel: req.body.tel,
             bzstatus: req.body.bzstatus,
             contacts: req.body.contacts,
+            mPort: req.body.mPort,
+            mIp: req.body.mIp,
+            typeNo: req.body.typeNo,
+            ct: req.body.ct,
+            ifyff: req.body.ifyff,
             type: 'cp'
         }
 
