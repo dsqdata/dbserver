@@ -113,6 +113,40 @@ class Emeter {
             })
         }
     }
+
+    async getEmetersUnopen(req, res, next) {
+        var fi = {}
+        if (req.query.no && req.query.no != 'null') {
+            fi.no = new RegExp(req.query.no, 'gi');
+        }
+        if (req.query.classAllPath && req.query.classAllPath != 'null') {
+            fi.classAllPath = req.query.classAllPath
+        }
+
+        if (req.query.status != null) {
+            fi.status = req.query.status;
+        } else {
+            fi.status = 1
+        }
+
+        try {
+            let companyInfos = await EmeterModel.find(fi).sort({
+                date: -1
+            }).skip(Number(req.query.ps) * (Number(req.query.pi) - 1)).limit(Number(req.query.ps))
+
+            const totalItems = await EmeterModel.count(fi);
+            res.send({
+                state: 'success',
+                companyInfos: companyInfos,
+                total: totalItems
+            });
+        } catch (err) {
+            res.send({
+                state: 'error',
+                message: err.message
+            })
+        }
+    }
 }
 
 module.exports = new Emeter();

@@ -22,5 +22,7 @@ module.exports.routeConfig = {
         {'getEmeterInfos': {post: emeter.getEmeters}},
         {'addEmeterInfo': {post: emeter.addEmeter}},
         {'delEmeterInfo': {post: emeter.delEmeter}},
+        {'getEmetersUnopen': {post: emeter.getEmetersUnopen}},
+
     ]
 };
