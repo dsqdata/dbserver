@@ -3,16 +3,16 @@ const router = express.Router();
 const requireAll = require('require-all');
 const path = require('path');
 const _ = require('lodash');
-const filter = require('../../lib/filter/jqgrid.filter');
-
+const jqgridFilter = require('../../lib/filter/jqgrid.filter');
+const baseFilter = require('../../lib/filter/base.filter');
 // const tokenUtil = require('../common/util/apiTokenUtil');
 // const patienttokenUtil = require('../../utils/patient.token.util');
 // const webTokenUtil = require('../common/util/apiWebTokenUtil');
 
 const commonFilterConfig = {
 
-    'gridPageFilter': filter.gridPageFilter
-    // 'commonFilter1': tokenUtil.verifyToken,
+    'gridPageFilter': jqgridFilter.gridPageFilter,
+    'baseFilter': baseFilter.baseFilter
     // 'commonFilter2': tokenUtil.jhGridQueryFilter,
     // 'commonFilter3': tokenUtil.packQueryFilter,
     // 'commonFilter4': patienttokenUtil.verifyToken,
