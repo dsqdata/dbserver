@@ -13,7 +13,7 @@ module.exports.routeConfig = {
         {'delClassInfo': {post: classInfo.delClassInfo}},
     ],
     '/route/': [
-        {'getRouteInfos': {post: classInfo.getRouteInfos}},
+        {'getRouteInfos': {post: ['baseFilter', classInfo.getRouteInfos]}},
         {'addRouteInfo': {post: classInfo.addRouteInfo}},
         {'delRouteInfo': {post: classInfo.delRouteInfo}},
     ]
