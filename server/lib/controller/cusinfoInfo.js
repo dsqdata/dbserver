@@ -5,7 +5,6 @@ class CusinfoInfo {
     constructor() {
     }
 
-
     async delCusinfoInfo(req, res, next) {
         const companyObj = {
             status: 0,
