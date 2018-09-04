@@ -49,7 +49,8 @@ class Emeter {
             typeNo: req.body.typeNo,
             ct: req.body.ct,
             ifyff: req.body.ifyff,
-            type: 'cp'
+            type: 'cp',
+            branch: req.branch
         }
 
         try {

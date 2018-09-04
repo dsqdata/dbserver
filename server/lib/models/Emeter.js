@@ -27,18 +27,10 @@ var EmeterSchema = new Schema({
     ct: String,
     ifyff: String,
     introduction: String,
-    bzstatus: {
-        type: Number,
-        default: 0
-    },
-    status: {
-        type: Number,
-        default: 1
-    },//0-失效 1-生效
-    date: {
-        type: Date,
-        default: Date.now
-    },
+    bzstatus: {type: Number, default: 0},
+    branch: {type: String, required: true},
+    status: {type: Number, default: 1},//0-失效 1-生效
+    date: {type: Date, default: Date.now}
 });
 
 
