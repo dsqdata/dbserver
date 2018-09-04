@@ -41,7 +41,7 @@ class CommunityInfo {
             introduction: req.body.introduction,
             tel: req.body.tel,
             contacts: req.body.contacts,
-            type: 'cp'
+            type: 'cp',
         }
 
         try {
@@ -73,10 +73,7 @@ class CommunityInfo {
     }
 
     async getCommunityInfos(req, res, next) {
-        console.log(req.query)
-
-        var name = req.query.name
-        var fi = {}
+        var fi = {companyId: req.companyId}
 
         if (req.query.companyId && req.query.companyId != 'null' && req.query.companyId != 'undefined') {
             fi.companyId = new RegExp(req.query.companyId, 'gi');

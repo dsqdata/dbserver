@@ -6,11 +6,34 @@
  ********************************************************************/
 
 const {companyInfo} = require('../../../lib/controller');
+const {communityInfo} = require('../../../lib/controller');
+const {floorInfo} = require('../../../lib/controller');
+const {classInfo} = require('../../../lib/controller');
 module.exports.routeConfig = {
     '/company/': [
-        {'getCompanyInfoTree': {post: companyInfo.getCompanyInfoTree}},
+        {'getCompanyInfoTree': {post: ['baseFilter', companyInfo.getCompanyInfoTree]}},
         {'getCompanyInfos': {post: companyInfo.getCompanyInfos}},
         {'addCompanyInfo': {post: companyInfo.addCompanyInfo}},
         {'delCompanyInfo': {post: companyInfo.delCompanyInfo}},
+    ],
+    '/community/': [
+        {'getCommunityInfos': {post: ['baseFilter', communityInfo.getCommunityInfos]}},
+        {'addCommunityInfo': {post: ['baseFilter', communityInfo.addCommunityInfo]}},
+        {'delCommunityInfo': {post: ['baseFilter', communityInfo.delCommunityInfo]}},
+    ],
+    '/floor/': [
+        {'getFloorInfos': {post: ['baseFilter', floorInfo.getFloorInfos]}},
+        {'addFloorInfo': {post: ['baseFilter', floorInfo.addFloorInfo]}},
+        {'delFloorInfo': {post: ['baseFilter', floorInfo.delFloorInfo]}},
+    ],
+    '/class/': [
+        {'getClassInfos': {post: ['baseFilter', classInfo.getClassInfos]}},
+        {'addClassInfo': {post: ['baseFilter', classInfo.addClassInfo]}},
+        {'delClassInfo': {post: ['baseFilter', classInfo.delClassInfo]}},
+    ],
+    '/route/': [
+        {'getRouteInfos': {post: ['baseFilter', classInfo.getRouteInfos]}},
+        {'addRouteInfo': {post: ['baseFilter', classInfo.addRouteInfo]}},
+        {'delRouteInfo': {post: ['baseFilter', classInfo.delRouteInfo]}},
     ]
 };

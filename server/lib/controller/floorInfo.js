@@ -36,16 +36,14 @@ class FloorInfo {
             companyName: req.body.companyName,
             communityId: req.body.communityId,
             communityName: req.body.communityName,
-
-
-
             name: req.body.name,
             address: req.body.address,
             allname: req.body.allname,
             introduction: req.body.introduction,
             tel: req.body.tel,
             contacts: req.body.contacts,
-            type: 'cp'
+            type: 'cp',
+            branch: req.branch
         }
 
         try {
@@ -77,10 +75,7 @@ class FloorInfo {
     }
 
     async getFloorInfos(req, res, next) {
-        console.log(req.query)
-
-        var name = req.query.name
-        var fi = {}
+        var fi = {branch: req.branch}
         if (req.query.communityId && req.query.communityId != 'null' && req.query.communityId != 'undefined') {
             fi.communityId = new RegExp(req.query.communityId, 'gi');
         }

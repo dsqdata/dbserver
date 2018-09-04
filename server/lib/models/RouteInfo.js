@@ -29,6 +29,7 @@ var RouteInfoSchema = new Schema({
     contacts: String,
     tel: String,
     introduction: String,
+    branch: {type: String, required: true},//所属公司
     status: {
         type: Number,
         default: 1

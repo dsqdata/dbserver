@@ -17,14 +17,9 @@ var FloorInfoSchema = new Schema({
     contacts: String,
     tel: String,
     introduction: String,
-    status: {
-        type: Number,
-        default: 1
-    },//0-失效 1-生效
-    date: {
-        type: Date,
-        default: Date.now
-    },
+    branch: {type: String, required: true},//所属公司
+    status: {type: Number, default: 1},//0-失效 1-生效
+    date: {type: Date, default: Date.now},
 });
 var FloorInfo = mongoose.model("FloorInfo", FloorInfoSchema);
 module.exports = FloorInfo;

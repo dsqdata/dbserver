@@ -44,7 +44,8 @@ class ClassInfo {
             introduction: req.body.introduction,
             tel: req.body.tel,
             contacts: req.body.contacts,
-            type: 'cp'
+            type: 'cp',
+            branch: req.branch
         }
 
         try {
@@ -76,10 +77,7 @@ class ClassInfo {
     }
 
     async getClassInfos(req, res, next) {
-        console.log(req.query)
-
-        var name = req.query.name
-        var fi = {}
+        var fi = {branch: req.branch}
         if (req.query.floorId && req.query.floorId != 'null' && req.query.floorId != 'undefined') {
             fi.floorId = new RegExp(req.query.floorId, 'gi');
         }
@@ -161,7 +159,8 @@ class ClassInfo {
             introduction: req.body.introduction,
             tel: req.body.tel,
             contacts: req.body.contacts,
-            type: 'cp'
+            type: 'cp',
+            branch: req.branch
         }
 
         try {
@@ -193,10 +192,7 @@ class ClassInfo {
     }
 
     async getRouteInfos(req, res, next) {
-        console.log(req.query)
-
-        var name = req.query.name
-        var fi = {}
+        var fi = {branch: req.branch}
         if (req.query.floorId && req.query.floorId != 'null' && req.query.floorId != 'undefined') {
             fi.floorId = new RegExp(req.query.floorId, 'gi');
         }

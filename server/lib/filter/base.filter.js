@@ -12,7 +12,13 @@ exports.baseFilter = function (req, res, next) {
         || req.headers['x-access-branch'];
     console.log(branch)
 
+    const companyId = (req.body && req.body.access_company)
+        || (req.query && req.query.access_company)
+        || req.headers['x-access-company'];
+    console.log(companyId)
+
     req.token = token;
     req.branch = branch;
+    req.companyId = companyId;
     next(); //继续下一步路由
 };

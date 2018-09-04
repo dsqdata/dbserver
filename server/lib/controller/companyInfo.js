@@ -10,10 +10,10 @@ class CompanyInfo {
     }
 
     async getCompanyInfoTree(req, res, next) {
-        var fi = {status: 1}
+        var fi = {status: 1, branch: req.branch}
         try {
-            let companyInfos = await CompanyInfoModel.find(fi).sort({date: -1})
-            let communityInfos = await CommunityInfoModel.find(fi).sort({date: -1})
+            let companyInfos = await CompanyInfoModel.find({_id: req.companyId, status: 1}).sort({date: -1})
+            let communityInfos = await CommunityInfoModel.find({companyId: req.companyId, status: 1}).sort({date: -1})
             let floorInfos = await FloorInfoModel.find(fi).sort({date: -1})
             let classInfos = await ClassInfoModel.find(fi).sort({date: -1})
             let routeInfos = await RouteInfoModel.find(fi).sort({date: -1})
@@ -99,9 +99,6 @@ class CompanyInfo {
     }
 
     async getCompanyInfos(req, res, next) {
-        console.log(req.query)
-
-        var name = req.query.name
         var fi = {}
         if (req.query.name && req.query.name != 'null') {
             fi.name = new RegExp(req.query.name, 'gi');
