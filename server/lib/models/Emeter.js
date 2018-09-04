@@ -28,7 +28,7 @@ var EmeterSchema = new Schema({
     ifyff: String,
     introduction: String,
     bzstatus: {type: Number, default: 0},
-    branch: {type: String, required: true},
+    branch: {type: String, required: true},//所属公司
     status: {type: Number, default: 1},//0-失效 1-生效
     date: {type: Date, default: Date.now}
 });
