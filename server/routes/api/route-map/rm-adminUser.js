@@ -11,7 +11,7 @@ module.exports.routeConfig = {
     // router.post('/admin/doLogin', AdminUser.loginAction);
     '/admin/': [
         {'doLogin': {post: adminUser.loginAction}},
-        {'getAdminUsers': {post: ['gridPageFilter', adminUser.getAdminUsers]}},
+        {'getAdminUsers': {post: ['baseFilter', 'gridPageFilter', adminUser.getAdminUsers]}},
     ],
     '/group/': [
         {'getAdminGroups': {post: ['gridPageFilter', adminGroup.getAdminGroups]}},
