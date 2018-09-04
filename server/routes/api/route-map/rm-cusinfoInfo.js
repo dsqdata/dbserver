@@ -8,15 +8,15 @@
 const {cusinfoInfo, account, emeter} = require('../../../lib/controller');
 module.exports.routeConfig = {
     '/cusinfo/': [
-        {'getCusinfoInfos': {post: cusinfoInfo.getCusinfoInfos}},
-        {'addCusinfoInfo': {post: cusinfoInfo.addCusinfoInfo}},
-        {'delCusinfoInfo': {post: cusinfoInfo.delCusinfoInfo}},
+        {'getCusinfoInfos': {post: ['baseFilter', cusinfoInfo.getCusinfoInfos]}},
+        {'addCusinfoInfo': {post: ['baseFilter', cusinfoInfo.addCusinfoInfo]}},
+        {'delCusinfoInfo': {post: ['baseFilter', cusinfoInfo.delCusinfoInfo]}},
     ],
     '/account/': [
-        {'getAccountInfos': {post: account.getAccount}},
-        {'addAccountInfo': {post: account.addAccount}},
-        {'delAccountInfo': {post: account.delAccount}},
-        {'addBalanceInfo': {post: account.addBalance}},
+        {'getAccountInfos': {post: ['baseFilter', account.getAccount]}},
+        {'addAccountInfo': {post: ['baseFilter', account.addAccount]}},
+        {'delAccountInfo': {post: ['baseFilter', account.delAccount]}},
+        {'addBalanceInfo': {post: ['baseFilter', account.addBalance]}},
     ],
     '/emeter/': [
         {'getEmeterInfos': {post: ['baseFilter', emeter.getEmeters]}},

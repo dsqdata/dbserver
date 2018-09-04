@@ -41,7 +41,8 @@ class CusinfoInfo {
             tel: req.body.tel,
             contacts: req.body.contacts,
             type: 'cp',
-            emeter: req.body.emeter
+            emeter: req.body.emeter,
+            branch: req.branch
         }
 
         if (companyObj.emeter) {
@@ -86,8 +87,7 @@ class CusinfoInfo {
     }
 
     async getCusinfoInfos(req, res, next) {
-        var name = req.query.name
-        var fi = {}
+        var fi = {branch: req.branch};
         if (req.query.name && req.query.name != 'null') {
             fi.name = new RegExp(req.query.name, 'gi');
         }
