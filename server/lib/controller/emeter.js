@@ -83,6 +83,7 @@ class Emeter {
 
     async getEmeters(req, res, next) {
         var fi = {}
+        fi.branch = req.branch;
         if (req.query.no && req.query.no != 'null') {
             fi.no = new RegExp(req.query.no, 'gi');
         }
@@ -117,6 +118,7 @@ class Emeter {
 
     async getEmetersUnopen(req, res, next) {
         var fi = {}
+        fi.branch = req.branch;
         if (req.query.no && req.query.no != 'null') {
             fi.no = new RegExp(req.query.no, 'gi');
         }
