@@ -1,9 +1,9 @@
 const CusinfoInfoModel = require("../models").CusinfoInfo;
+const EmeterModel = require("../models").Emeter;
 
 class CusinfoInfo {
     constructor() {
     }
-
 
 
     async delCusinfoInfo(req, res, next) {
@@ -40,7 +40,12 @@ class CusinfoInfo {
             introduction: req.body.introduction,
             tel: req.body.tel,
             contacts: req.body.contacts,
-            type: 'cp'
+            type: 'cp',
+            emeter: req.body.emeter
+        }
+
+        if (companyObj.emeter) {
+            companyObj.estatus = 1;
         }
 
         try {
@@ -57,6 +62,15 @@ class CusinfoInfo {
             } else {
                 const companyInfo = new CusinfoInfoModel(companyObj);
                 await companyInfo.save();
+                if (companyObj.emeter) {
+                    for (var i = 0; i < companyObj.emeter.length; i++) {
+                        await EmeterModel.findOneAndUpdate({
+                            _id: companyObj.emeter[i].meterId
+                        }, {
+                            $set: {bzstatus: 1}
+                        });
+                    }
+                }
                 res.send({
                     state: 'success',
                     id: companyInfo._id

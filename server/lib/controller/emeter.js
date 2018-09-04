@@ -128,7 +128,7 @@ class Emeter {
         } else {
             fi.status = 1
         }
-
+        fi.bzstatus = 0;
         try {
             let companyInfos = await EmeterModel.find(fi).sort({
                 date: -1

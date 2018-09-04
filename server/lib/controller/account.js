@@ -118,7 +118,6 @@ class Account {
         }
     }
 
-
     async addBalance(req, res, next) {
         var id = req.body._id;
         var balance = req.body.balance;
